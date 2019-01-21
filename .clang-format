@@ -7,7 +7,12 @@ Language:        Cpp
 # BasedOnStyle:  Google
 AccessModifierOffset: -1
 ConstructorInitializerIndentWidth: 4
-SortIncludes: false
+SortIncludes: false # true does not work with the -i option
+IncludeCategories:
+  - Regex:           '.\*Manager.h'
+    Priority:        2
+  - Regex:           '.\*'
+    Priority:        1
 
 AlignAfterOpenBracket: true
 AlignEscapedNewlinesLeft: true
@@ -60,16 +65,16 @@ TabWidth:        8
 UseTab:          Never
 BreakBeforeBraces: Custom
 BraceWrapping: 
-    AfterClass: true
+    AfterClass: false
     AfterControlStatement: false
     AfterEnum: false
-    AfterFunction: true
-    AfterNamespace: true
-    AfterObjCDeclaration: true
-    AfterStruct: false
-    AfterUnion: false
-    BeforeCatch: false
-    BeforeElse: false
+    AfterFunction: false
+    AfterNamespace: false
+    AfterObjCDeclaration: false
+    AfterStruct: true
+    AfterUnion: true
+    BeforeCatch: true
+    BeforeElse: true
     IndentBraces: false
 
 SpacesInParentheses: false
@@ -87,4 +92,3 @@ ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH ]
 SpaceBeforeParens: ControlStatements
 DisableFormat:   false
 ...
-

@@ -24,7 +24,7 @@ python "$DIR"/custom/InlineConstructorOnSingleLine.py "$1"
 # Add a semicolon at the end of simple macros
 python "$DIR"/custom/MacroSemicolonAppender.py "$1"
 # Add an extra newline before @implementation and @interface
-python "$DIR"/custom/DoubleNewlineInserter.py "$1"
+# python "$DIR"/custom/DoubleNewlineInserter.py "$1"
 
 # Run clang-format
 "$DIR"/bin/clang-format-3.8-custom -i -style=file "$1" ;
@@ -32,6 +32,8 @@ python "$DIR"/custom/DoubleNewlineInserter.py "$1"
 python "$DIR"/custom/GenericCategoryLinebreakIndentation.py "$1"
 # Fix an issue with clang-format breaking up a lone parameter onto a newline after a block literal argument.
 python "$DIR"/custom/ParameterAfterBlockNewline.py "$1"
+# Fix an issue with clang-format breaking up a lone argument onto a newline after a block literal argument.
+python "$DIR"/custom/ArgumentAfterBlockNewline.py "$1"
 # Fix an issue with clang-format inserting spaces in a preprocessor macro.
 python "$DIR"/custom/HasIncludeSpaceRemover.py "$1"
 # Add a newline at the end of the file
